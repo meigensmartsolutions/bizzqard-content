@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="$if(description)$$description$$endif$">
+  
+  <title>$if(title)$$title$$else$BIZZQARD$endif$ | BIZZQARD</title>
+  
+  <!-- BIZZQARD Landing Page Theme -->
+  <link rel="stylesheet" href="../bizzqard-assets/css/landing-page-theme.css">
+  
+  <!-- Favicon (optional) -->
+  <link rel="icon" type="image/png" href="../bizzqard-assets/images/favicon.png">
+  
+  <!-- Open Graph Meta Tags (für Social Sharing) -->
+  <meta property="og:title" content="$if(title)$$title$$endif$">
+  <meta property="og:description" content="$if(description)$$description$$endif$">
+  <meta property="og:type" content="website">
+  $if(image)$
+  <meta property="og:image" content="$image$">
+  $endif$
+</head>
+<body>
+  <div class="container">
+    $body$
+  </div>
+  
+  <!-- Optional: Analytics (später hinzufügen) -->
+  <!-- <script>/* Google Analytics / Plausible */</script> -->
+</body>
+</html>

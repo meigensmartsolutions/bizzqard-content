@@ -1,558 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
- <head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QR-Code Marketing Kurs - Kostenlos</title>
-  <script src="/_sdk/element_sdk.js"></script>
-   <!--
- <link rel="stylesheet" href="../bizzqard-assets/css/bizzqard-theme.css">
- -->
-
-
-  <style>
-        /* BIZZQARD Theme CSS */
-        :root {
-          --navy: #1a2332;
-          --orange: #ff6b35;
-          --white: #ffffff;
-          --gray-light: #f5f5f5;
-          --gray-medium: #9e9e9e;
-          --success: #4caf50;
-          --error: #f44336;
-        }
-
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        }
-
-        body {
-          box-sizing: border-box;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-          color: var(--navy);
-          background: var(--gray-light);
-          line-height: 1.6;
-          padding: 20px;
-          max-width: 800px;
-          margin: 0 auto;
-        }
-
-        h1 {
-          font-size: 32px;
-          font-weight: 700;
-          color: var(--navy);
-          margin-bottom: 16px;
-          line-height: 1.2;
-        }
-
-        h2 {
-          font-size: 24px;
-          font-weight: 600;
-          color: var(--navy);
-          margin-top: 32px;
-          margin-bottom: 12px;
-        }
-
-        h3 {
-          font-size: 20px;
-          font-weight: 600;
-          color: var(--navy);
-          margin-top: 24px;
-          margin-bottom: 8px;
-        }
-
-        p {
-          margin-bottom: 16px;
-          font-size: 16px;
-        }
-
-        ul, ol {
-          margin-left: 24px;
-          margin-bottom: 16px;
-        }
-
-        li {
-          margin-bottom: 8px;
-        }
-
-        img {
-          max-width: 100%;
-          height: auto;
-          border-radius: 8px;
-          margin: 24px 0;
-        }
-
-        .container {
-          max-width: 800px;
-          margin: 0 auto;
-          padding: 20px;
-        }
-
-        /* CTA Buttons */
-        .cta-button {
-          display: inline-block;
-          background: var(--orange);
-          color: var(--white);
-          padding: 16px 32px;
-          border-radius: 8px;
-          text-decoration: none;
-          font-weight: 600;
-          font-size: 18px;
-          margin-top: 32px;
-          transition: all 0.3s ease;
-          text-align: center;
-          border: none;
-          cursor: pointer;
-        }
-
-        .cta-button:hover {
-          background: #ff8c5a;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-        }
-
-        .cta-button.secondary {
-          background: var(--navy);
-        }
-
-        .cta-button.secondary:hover {
-          background: #2a3442;
-        }
-
-        /* Affiliate CTA (wird von App erkannt → Safari) */
-        .cta-button.affiliate {
-          background: linear-gradient(135deg, var(--orange), #ff8c5a);
-        }
-
-        /* Feature List */
-        .feature-list {
-          list-style: none;
-          margin-left: 0;
-        }
-
-        .feature-list li {
-          padding-left: 32px;
-          position: relative;
-          margin-bottom: 12px;
-        }
-
-        .feature-list li::before {
-          content: '✓';
-          position: absolute;
-          left: 0;
-          color: var(--success);
-          font-weight: bold;
-          font-size: 20px;
-        }
-
-        /* Card */
-        .card {
-          background: var(--white);
-          border-radius: 12px;
-          padding: 24px;
-          margin: 24px 0;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Price Tag */
-        .price {
-          font-size: 48px;
-          font-weight: 700;
-          color: var(--orange);
-          margin: 24px 0;
-        }
-
-        .price-subtitle {
-          font-size: 16px;
-          color: var(--gray-medium);
-          margin-top: -16px;
-          margin-bottom: 24px;
-        }
-
-        /* Free Badge */
-        .badge-free {
-          display: inline-block;
-          background: var(--success);
-          color: var(--white);
-          padding: 6px 12px;
-          border-radius: 4px;
-          font-size: 14px;
-          font-weight: 600;
-          margin-left: 12px;
-        }
-
-        /* Custom styles for landing page */
-        .hero-section {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .qr-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 30px;
-            background: var(--success);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .subheadline {
-            font-size: 20px;
-            color: var(--gray-medium);
-            margin-bottom: 24px;
-            font-weight: 400;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .benefit-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-        }
-
-        .cta-section {
-            background: var(--navy);
-            color: var(--white);
-            padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 32px 0;
-        }
-
-        .cta-section h2 {
-            color: var(--white);
-            margin-bottom: 16px;
-        }
-
-        .cta-section p {
-            margin-bottom: 24px;
-            opacity: 0.9;
-        }
-
-        .cta-section .cta-button {
-            background: var(--orange);
-            margin-top: 16px;
-        }
-
-        .testimonial {
-            background: var(--gray-light);
-            padding: 24px;
-            border-radius: 8px;
-            margin: 24px 0;
-            text-align: center;
-            border-left: 4px solid var(--orange);
-        }
-
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 12px;
-        }
-
-        .testimonial .author {
-            font-weight: 600;
-            color: var(--navy);
-        }
-
-        .footer {
-            text-align: center;
-            padding: 24px;
-            color: var(--gray-medium);
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-          body {
-            padding: 16px;
-          }
-
-          h1 {
-            font-size: 28px;
-          }
-
-          h2 {
-            font-size: 22px;
-          }
-
-          .cta-button {
-            display: block;
-            width: 100%;
-          }
-
-          .benefits-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-    </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
- </head>
- <body>
-  <div class="container"><!-- Hero Section -->
-   <div class="hero-section">
-    <div class="qr-icon">
-     <svg width="40" height="40" viewbox="0 0 24 24" fill="white"><path d="M3 11h8V3H3v8zm2-6h4v4H5V5zM3 21h8v-8H3v8zm2-6h4v4H5v-4zM13 3v8h8V3h-8zm6 6h-4V5h4v4zM19 13h2v2h-2zM13 13h2v2h-2zM15 15h2v2h-2zM13 17h2v2h-2zM15 19h2v2h-2zM17 17h2v2h-2zM17 13h2v2h-2zM19 15h2v2h-2z" />
-     </svg>
-    </div>
-    <h1 id="main-headline">QR-Codes als Marketing-Geheimwaffe</h1>
-    <p class="subheadline" id="subheadline">Kostenloser Online-Kurs für kleine Unternehmen und Freelancer</p>
-    <p style="font-size: 1.1rem; color: #555; max-width: 600px; margin: 0 auto;">Entdecken Sie, wie Sie mit einfachen QR-Codes neue Kunden gewinnen und Ihr Unternehmen erfolgreich vermarkten – auch ohne große Marketing-Abteilung!</p>
-   </div><!-- Benefits Grid -->
-   <div class="benefits-grid">
-    <div class="card">
-     <div class="benefit-icon">
-      🎯
-     </div>
-     <h3>Einfach &amp; Effektiv</h3>
-     <p>Keine komplizierte Technik. QR-Codes erstellen und strategisch einsetzen – auf Flyern, im Schaufenster oder auf Ihrer Website.</p>
-    </div>
-    <div class="card">
-     <div class="benefit-icon">
-      📈
-     </div>
-     <h3>Mehr Reichweite</h3>
-     <p>Verwandeln Sie jeden physischen Kontaktpunkt in eine digitale Brücke zu Ihrem Unternehmen und erreichen Sie mehr potenzielle Kunden.</p>
-    </div>
-    <div class="card">
-     <div class="benefit-icon">
-      💡
-     </div>
-     <h3>Clevere Funnels</h3>
-     <p>Lernen Sie, wie Sie hinter jedem QR-Code einen durchdachten Funnel aufbauen, der aus Interessenten echte Kunden macht.</p>
-    </div>
-   </div><!-- Course Content -->
-   <div class="card">
-    <h2 id="course-title">QR-Code Marketing Masterclass</h2>
-    <ul class="feature-list">
-     <li><strong>QR-Code Grundlagen:</strong> Erstellen, gestalten und optimal platzieren</li>
-     <li><strong>Funnel-Strategien:</strong> Lead-Magneten und E-Mail-Listen aufbauen</li>
-     <li><strong>Praktische Anwendung:</strong> Flyer, Schaufenster, Website &amp; mehr</li>
-     <li><strong>Lead-Qualifizierung:</strong> Aus kalten Leads warme Interessenten machen</li>
-     <li><strong>Experten-Positionierung:</strong> Als Fachkraft wahrgenommen werden</li>
-     <li><strong>Praxis-Checklisten:</strong> PDF-Vorlagen für sofortige Umsetzung</li>
+  <meta name="description" content="">
+  
+  <title>lead-magnet-masterclass | BIZZQARD</title>
+  
+  <!-- BIZZQARD Landing Page Theme -->
+  <link rel="stylesheet" href="../bizzqard-assets/css/landing-page-theme.css">
+  
+  <!-- Favicon (optional) -->
+  <link rel="icon" type="image/png" href="../bizzqard-assets/images/favicon.png">
+  
+  <!-- Open Graph Meta Tags (für Social Sharing) -->
+  <meta property="og:title" content="lead-magnet-masterclass">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="website">
+  </head>
+<body>
+  <div class="container">
+    <h1 id="lead-magnet-masterclass">Lead-Magnet Masterclass</h1>
+    <p><strong>Erstelle unwiderstehliche Lead-Magneten, die deine
+    E-Mail-Liste füllen</strong></p>
+    <hr />
+    <h2 id="was-du-lernst">🎯 Was du lernst</h2>
+    <h3 id="ideen-entwicklung">💡 Ideen-Entwicklung</h3>
+    <p>Finde heraus, welche Lead-Magneten deine Zielgruppe wirklich
+    will. Mit bewährten Methoden und erprobten Templates entwickelst du
+    Ideen, die deine potenziellen Kunden nicht ablehnen können.</p>
+    <h3 id="content-erstellung">📝 Content-Erstellung</h3>
+    <p>Erstelle hochwertige PDFs, Checklisten &amp; Videos in Rekordzeit
+    - auch ohne Design-Skills. Du lernst die besten Tools und Workflows
+    für professionelle Lead-Magneten.</p>
+    <h3 id="launch-strategie">🚀 Launch-Strategie</h3>
+    <p>Bewerbe deinen Lead-Magneten und gewinne hunderte Leads - auch
+    ohne großes Werbebudget. Du erfährst, welche Kanäle wirklich
+    funktionieren und wie du sie optimal nutzt.</p>
+    <hr />
+    <h2 id="das-bekommst-du">✅ Das bekommst du</h2>
+    <ul>
+    <li><strong>5 Video-Lektionen</strong> (insgesamt 45 Minuten) -
+    Schritt für Schritt zum perfekten Lead-Magneten</li>
+    <li><strong>10 Lead-Magnet Templates</strong> - Sofort einsetzbar
+    für verschiedene Branchen</li>
+    <li><strong>Content-Erstellungs-Checkliste</strong> - Nie wieder
+    wichtige Punkte vergessen</li>
+    <li><strong>Launch-Kampagnen-Vorlagen</strong> - Für E-Mail, Social
+    Media und Landing Pages</li>
+    <li><strong>Bonus: 5 E-Mail-Sequenzen</strong> - Vorlagen für die
+    Follow-up-Kommunikation</li>
     </ul>
-   </div><!-- Testimonial -->
-   <div class="testimonial">
-    <p>"Perfekt für Einzelkämpfer wie mich! Endlich eine Marketing-Strategie, die ich ohne großes Budget umsetzen kann. Die QR-Code-Funnels haben meine Kundengewinnung revolutioniert."</p>
-    <div class="author">
-     – Sarah M., Freelance-Beraterin
+    <hr />
+    <h2 id="kostenlos">💰 100% Kostenlos</h2>
+    <p>Dieser Kurs ist komplett kostenlos. Keine versteckten Kosten,
+    kein Abo, keine Verpflichtungen.</p>
+    <p>Du bekommst sofort Zugang zu allen Inhalten nach der
+    Anmeldung.</p>
+    <hr />
+    <div class="cta-box">
+    <h3>
+    Bereit, deine E-Mail-Liste zu füllen?
+    </h3>
+    <p>
+    Melde dich jetzt an und starte mit dem Kurs in weniger als 2 Minuten
+    </p>
+    <p><a href="https://deine-domain.systeme.io/lead-magnet-optin" class="cta-button">
+    Kostenlos anmelden </a></p>
     </div>
-   </div><!-- CTA Section -->
-   <div class="cta-section">
-    <h2>Starten Sie jetzt – komplett kostenfrei!</h2>
-    <p>⏰ Limitiertes Angebot: Sichern Sie sich Ihren Platz in der ersten Kursrunde und profitieren Sie von dieser Win-Win-Situation. Ihr Feedback hilft mir, den Kurs noch besser zu machen!</p><button class="cta-button" id="cta-button" onclick="handleSignup()">Jetzt kostenlos anmelden</button>
-    <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">📹 Kurze Videos + 📋 PDF-Checklisten = Sofort umsetzbare Ergebnisse</p>
-   </div><!-- Footer -->
-   <div class="footer">
-    <p id="footer-text">© 2024 QR-Marketing Kurs – Ihr Weg zu mehr Sichtbarkeit</p>
-   </div>
+    <hr />
+    <h2 id="häufige-fragen">❓ Häufige Fragen</h2>
+    <p><strong>Ist der Kurs wirklich kostenlos?</strong><br />
+    Ja, komplett! Keine Kreditkarte erforderlich, keine versteckten
+    Kosten.</p>
+    <p><strong>Wie lange habe ich Zugriff?</strong><br />
+    Unbegrenzt. Einmal angemeldet, gehört der Kurs dir für immer.</p>
+    <p><strong>Für wen ist der Kurs geeignet?</strong><br />
+    Für alle Unternehmer, Coaches, Berater und Selbstständige, die ihre
+    E-Mail-Liste aufbauen wollen.</p>
+    <p><strong>Brauche ich Vorkenntnisse?</strong><br />
+    Nein, der Kurs ist für Anfänger konzipiert. Alles wird Schritt für
+    Schritt erklärt.</p>
+    <hr />
+    <div class="info-box">
+    <p><strong>🎓 Von BIZZQARD:</strong> Praktisches Marketing-Wissen,
+    das funktioniert - ohne Theorieblabla.</p>
+    </div>
   </div>
-  <script>
-        const defaultConfig = {
-            main_headline: "QR-Codes als Marketing-Geheimwaffe",
-            subheadline: "Kostenloser Online-Kurs für kleine Unternehmen und Freelancer",
-            course_title: "QR-Code Marketing Masterclass",
-            cta_button: "Jetzt kostenlos anmelden",
-            footer_text: "© 2024 QR-Marketing Kurs – Ihr Weg zu mehr Sichtbarkeit",
-            primary_color: "#ff6b35",
-            secondary_color: "#1a2332",
-            text_color: "#1a2332",
-            background_color: "#ffffff",
-            accent_color: "#4caf50",
-            font_family: "-apple-system",
-            font_size: 16
-        };
-
-        let config = { ...defaultConfig };
-
-        async function onConfigChange(newConfig) {
-            config = { ...config, ...newConfig };
-            
-            // Update text content
-            const mainHeadline = document.getElementById('main-headline');
-            if (mainHeadline) mainHeadline.textContent = config.main_headline || defaultConfig.main_headline;
-            
-            const subheadline = document.getElementById('subheadline');
-            if (subheadline) subheadline.textContent = config.subheadline || defaultConfig.subheadline;
-            
-            const courseTitle = document.getElementById('course-title');
-            if (courseTitle) courseTitle.textContent = config.course_title || defaultConfig.course_title;
-            
-            const ctaButton = document.getElementById('cta-button');
-            if (ctaButton) ctaButton.textContent = config.cta_button || defaultConfig.cta_button;
-            
-            const footerText = document.getElementById('footer-text');
-            if (footerText) footerText.textContent = config.footer_text || defaultConfig.footer_text;
-
-            // Apply colors using CSS variables
-            const primaryColor = config.primary_color || defaultConfig.primary_color;
-            const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
-            const textColor = config.text_color || defaultConfig.text_color;
-            const backgroundColor = config.background_color || defaultConfig.background_color;
-            const accentColor = config.accent_color || defaultConfig.accent_color;
-
-            // Update CSS variables to match BIZZQARD theme
-            document.documentElement.style.setProperty('--orange', primaryColor);
-            document.documentElement.style.setProperty('--navy', secondaryColor);
-            document.documentElement.style.setProperty('--white', backgroundColor);
-            document.documentElement.style.setProperty('--success', accentColor);
-            
-            // Apply text color
-            document.body.style.color = textColor;
-
-            // Update font
-            const customFont = config.font_family || defaultConfig.font_family;
-            const baseFontStack = 'Tahoma, Geneva, Verdana, sans-serif';
-            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
-
-            // Update font size
-            const baseSize = config.font_size || defaultConfig.font_size;
-            document.body.style.fontSize = `${baseSize}px`;
-            
-            if (mainHeadline) mainHeadline.style.fontSize = `${baseSize * 3}px`;
-            if (subheadline) subheadline.style.fontSize = `${baseSize * 1.3}px`;
-            if (courseTitle) courseTitle.style.fontSize = `${baseSize * 2.5}px`;
-            if (ctaButton) ctaButton.style.fontSize = `${baseSize * 1.3}px`;
-            
-            const benefitTitles = document.querySelectorAll('.benefit-card h3');
-            benefitTitles.forEach(title => title.style.fontSize = `${baseSize * 1.4}px`);
-        }
-
-        function mapToCapabilities(config) {
-            return {
-                recolorables: [
-                    {
-                        get: () => config.primary_color || defaultConfig.primary_color,
-                        set: (value) => {
-                            config.primary_color = value;
-                            if (window.elementSdk) window.elementSdk.setConfig({ primary_color: value });
-                        }
-                    },
-                    {
-                        get: () => config.secondary_color || defaultConfig.secondary_color,
-                        set: (value) => {
-                            config.secondary_color = value;
-                            if (window.elementSdk) window.elementSdk.setConfig({ secondary_color: value });
-                        }
-                    },
-                    {
-                        get: () => config.text_color || defaultConfig.text_color,
-                        set: (value) => {
-                            config.text_color = value;
-                            if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
-                        }
-                    },
-                    {
-                        get: () => config.background_color || defaultConfig.background_color,
-                        set: (value) => {
-                            config.background_color = value;
-                            if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
-                        }
-                    },
-                    {
-                        get: () => config.accent_color || defaultConfig.accent_color,
-                        set: (value) => {
-                            config.accent_color = value;
-                            if (window.elementSdk) window.elementSdk.setConfig({ accent_color: value });
-                        }
-                    }
-                ],
-                borderables: [],
-                fontEditable: {
-                    get: () => config.font_family || defaultConfig.font_family,
-                    set: (value) => {
-                        config.font_family = value;
-                        if (window.elementSdk) window.elementSdk.setConfig({ font_family: value });
-                    }
-                },
-                fontSizeable: {
-                    get: () => config.font_size || defaultConfig.font_size,
-                    set: (value) => {
-                        config.font_size = value;
-                        if (window.elementSdk) window.elementSdk.setConfig({ font_size: value });
-                    }
-                }
-            };
-        }
-
-        function mapToEditPanelValues(config) {
-            return new Map([
-                ["main_headline", config.main_headline || defaultConfig.main_headline],
-                ["subheadline", config.subheadline || defaultConfig.subheadline],
-                ["course_title", config.course_title || defaultConfig.course_title],
-                ["cta_button", config.cta_button || defaultConfig.cta_button],
-                ["footer_text", config.footer_text || defaultConfig.footer_text]
-            ]);
-        }
-
-        function handleSignup() {
-            // Create success message
-            const successMessage = document.createElement('div');
-            successMessage.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: white;
-                padding: 40px;
-                border-radius: 15px;
-                box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-                text-align: center;
-                z-index: 1000;
-                max-width: 400px;
-                width: 90%;
-            `;
-            
-            successMessage.innerHTML = `
-                <div style="color: #4CAF50; font-size: 3rem; margin-bottom: 20px;">✓</div>
-                <h3 style="color: #2c3e50; margin-bottom: 15px;">Vielen Dank für Ihr Interesse!</h3>
-                <p style="color: #7f8c8d; margin-bottom: 25px;">Sie werden in Kürze weitere Informationen zum kostenlosen QR-Code Marketing Kurs erhalten.</p>
-                <button onclick="this.parentElement.remove(); document.querySelector('.backdrop').remove();" 
-                        style="background: #4CAF50; color: white; border: none; padding: 12px 25px; border-radius: 25px; cursor: pointer; font-weight: 600;">
-                    Verstanden
-                </button>
-            `;
-
-            // Create backdrop
-            const backdrop = document.createElement('div');
-            backdrop.className = 'backdrop';
-            backdrop.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.5);
-                z-index: 999;
-            `;
-            
-            backdrop.onclick = () => {
-                successMessage.remove();
-                backdrop.remove();
-            };
-
-            document.body.appendChild(backdrop);
-            document.body.appendChild(successMessage);
-        }
-
-        // Initialize SDK
-        if (window.elementSdk) {
-            window.elementSdk.init({
-                defaultConfig,
-                onConfigChange,
-                mapToCapabilities,
-                mapToEditPanelValues
-            });
-        }
-    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'995b82842010c7c3',t:'MTc2MTY2NTc5Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  
+  <!-- Optional: Analytics (später hinzufügen) -->
+  <!-- <script>/* Google Analytics / Plausible */</script> -->
+</body>
 </html>
