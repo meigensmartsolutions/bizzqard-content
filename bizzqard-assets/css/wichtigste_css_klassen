@@ -1,0 +1,22 @@
+::: intro
+Kurzer Intro-Text (2-3 Sätze)
+:::
+
+![Hero](image.jpg){.hero-image}
+
+::: navy-section
+Wichtiger Bereich mit Navy-Hintergrund
+:::
+
+::: cta-box
+### Call-to-Action
+[Button](#){.cta-button}
+:::
+
+::: quote-box
+"Testimonial oder wichtiges Zitat"
+:::
+
+::: info-box
+**💡 Tipp:** Hilfreiche Info
+:::
